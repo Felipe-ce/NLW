@@ -1,4 +1,3 @@
-
 .page-header{
   background: var(--color-primary);
   display: flex;
@@ -45,7 +44,6 @@
 
 
 /* responsivo */
-
 @media (min-width: 700px){
   #page-study .container{
     max-width: 100vw;
