@@ -7,10 +7,14 @@ addHorario.addEventListener('click', cloneField)
 
 // executar uma ação
 function cloneField() {
-  const fields = document.querySelector('.schedule-item').cloneNode(true)
-  // duplicar campos
-  document.querySelector('#schedule-items').appendChild(fields)
-  // colcoar na pagina
+  const newFieldsContainer = document.querySelector('.schedule-item').cloneNode(true)
 
-  
+  // limpar os campos
+  const fielsd = newFieldsContainer.querySelectorAll('input')
+  fielsd.forEach(function (field) {
+    field.value = "";
+  });
+  // duplicar campos
+  document.querySelector('#schedule-items').appendChild(newFieldsContainer)
+  // colcoar na pagina
 }
