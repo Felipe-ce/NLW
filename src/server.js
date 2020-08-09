@@ -27,7 +27,7 @@ function pageLanding(req, res) {
   return res.sendFile("index.html")
 }
 function pageStudy(req, res) {
-  return res.sendFile("study.html", { diego: proffys[0] })
+  return res.sendFile("study.html")
 }
 function pagegiveClasses(req, res) {
   return res.sendFile("give-classes.html")
@@ -37,11 +37,11 @@ const server = express()
 
 
 // configurar nunjucks
-const nunjucks = requier('nunjucks')
-nunjucks.configure('src/views', {
-  express: server,
-  noCache: true,
-})
+// const nunjucks = requier('nunjucks')
+// nunjucks.configure('src/views', {
+//   express: server,
+//   noCache: true,
+// })
 
 
 server
