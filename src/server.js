@@ -59,3 +59,9 @@ server.use(express.static('public'))
     return res.sendFile(__dirname + "/views/give-classes.html")
   })
   .listen(5500)
+
+  /*
+  ***** RODAR  O SERVER TODA VEZ QUE ABRIR O VS CODE
+        COMANDO : npm run dev
+  
+  */
