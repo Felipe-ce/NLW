@@ -23,17 +23,15 @@
 //   }
 // ]
 
-// function pageLanding(req, res) {
-//   return res.sendFile("index.html")
-// }
-// function pageStudy(req, res) {
-//   return res.sendFile("study.html")
-// }
-// function pagegiveClasses(req, res) {
-//   return res.sendFile("give-classes.html")
-// }
-// const express = require('express')
-// const server = express()
+function pageLanding(req, res) {
+  return res.sendFile(__dirname + "/views/index.html")
+}
+function pageStudy(req, res) {
+  return res.sendFile(__dirname + "/views/study.html")
+}
+function pagegiveClasses(req, res) {
+  return res.sendFile(__dirname + "/views/give-classes.html")
+}
 
 
 // // configurar nunjucks
@@ -43,21 +41,14 @@
 //   noCache: true,
 // })
 
-
-
 const express = require('express')
 const server = express()
 
 server.use(express.static('public'))
-  .get("/", (req, res) => {
-    return res.sendFile(__dirname + "/views/index.html")
-  })
-  .get("/study", (req, res) => {
-    return res.sendFile(__dirname + "/views/study.html")
-  })
-  .get("/give-classes", (req, res) => {
-    return res.sendFile(__dirname + "/views/give-classes.html")
-  })
+
+  .get("/", pageLanding)
+  .get("/study", pageStudy)
+  .get("/give-classes", pagegiveClasses)
   .listen(5500)
 
   /*
